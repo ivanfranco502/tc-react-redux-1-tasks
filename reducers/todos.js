@@ -22,7 +22,13 @@ export default (state = INITIAL_STATE, action) => {
     case ADD_TASK:
       return {
         ...state,
-        tasks: [...state.tasks, { title: action.taskName }],
+        tasks: [
+          ...state.tasks, 
+          { 
+            title: action.taskName,
+            id:state.tasks.length + 1 
+          }
+        ],
         newName: ''
       };
     case SET_TASKS:

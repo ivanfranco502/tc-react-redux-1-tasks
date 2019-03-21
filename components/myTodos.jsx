@@ -40,30 +40,9 @@ class MyTodos extends Component {
   }
 }
 
-const mapStateToProps = ({ todos }) => ({
-  newName: todos.newName,
-  tasks: todos.tasks,
-  isLoading: todos.isLoading
-});
-
-const mapDispatchToProps = dispatch => ({
-  setLoading: () => dispatch(todosActions.setLoading()),
-  setTasks: tasks => dispatch(todosActions.setTasks(tasks)),
-  addTask: taskNewName => dispatch(todosActions.addTask(taskNewName)),
-  changeNewName: text => dispatch(todosActions.changeNewName(text))
-});
 
 
-MyTodos.propTypes = {
-  newName: PropTypes.string,
-  tasks: PropTypes.arrayOf(PropTypes.object),
-  isLoading: PropTypes.bool,
-};
 
-MyTodos.defaultProps = {
-  newName: '',
-  tasks: [],
-  isLoading: false,
-};
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(MyTodos);
